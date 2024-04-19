@@ -1,0 +1,14 @@
+[Unit]
+Description=Parse Server Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/parse-server
+ExecStart=/usr/bin/npm start
+StandardOutput=append:/var/log/parse-server.log
+StandardError=append:/var/log/parse-server-error.log
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
