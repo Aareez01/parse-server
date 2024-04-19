@@ -1,0 +1,11 @@
+[Unit]
+Description=Parse Dashboard Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/parse-dashboard --dev --appId yourAppId --masterKey yourMasterKey --serverURL "https://example.com/parse" --appName optionalName
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
