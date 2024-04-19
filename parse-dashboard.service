@@ -5,6 +5,8 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/parse-dashboard --dev --appId yourAppId --masterKey yourMasterKey --serverURL "https://example.com/parse" --appName optionalName
+StandardOutput=append:/var/log/parse-dashboard.log
+StandardError=append:/var/log/parse-dashboard-error.log
 Restart=always
 
 [Install]
